@@ -1,0 +1,28 @@
+.mi-audio {
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .mi-audio::-webkit-media-controls-start-playback-button,
+  .mi-audio::-webkit-media-controls-end-playback-button,
+  .mi-audio::-webkit-media-controls-enclosure {
+    color: #333;
+  }
+  
+  .mi-audio::-webkit-media-controls-volume-slider,
+  .mi-audio::-webkit-media-controls-mute-button,
+  .mi-audio::-webkit-media-controls-play-button,
+  .mi-audio::-webkit-media-controls-pause-button {
+    color: #333;
+    background-color: #fff;
+    border: none;
+  }
+  
+  .mi-audio::-webkit-media-controls-time-remaining-display {
+    font-size: 14px;
+  }
+  
