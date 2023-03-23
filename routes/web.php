@@ -27,6 +27,7 @@ Route::get('/welcome', function () {
 })->name('login');
 */
 
+
 Route::get('/', [CartController::class, 'shop'])->name('shop');
 Route::get('/cart', [CartController::class, 'cart'])->name('cart.index');
 Route::post('/add', [CartController::class, 'add'])->name('cart.store');
