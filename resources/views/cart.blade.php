@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
     <div class="container" style="margin-top: 80px">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -46,6 +44,7 @@
                 @endif
 
                 @foreach($cartCollection as $item)
+                   
                     <div class="row">
                         <div class="col-lg-3">
                             <img src="/images/{{ $item->attributes->image }}" class="img-thumbnail" width="200" height="200">
@@ -53,7 +52,7 @@
                         <div class="col-lg-5">
                             <p>
                                 <b><a href="/shop/{{ $item->attributes->slug }}">{{ $item->name }}</a></b><br>
-                                <b>Price: </b>${{ $item->price }}<br>
+                                <b>Price: </b>${{ $item->price }} <br>
                                <!---  <b>Sub Total: </b>${{ \Cart::get($item->id)->getPriceSum() }}<br> -->
                                 <b>Audio: </b>
                                     <audio controls >
@@ -90,7 +89,7 @@
                             <li class="list-group-item"><b>Total: </b>${{ \Cart::getTotal() }}</li>
                         </ul>
                     </div>
-                    <br><a href="/" class="btn btn-dark">Continue en la tienda</a>
+                    <br><a href="/shop" class="btn btn-dark">Continue en la tienda</a>
                     <form action="{{route('checkout')}}" method="POST">
                      @csrf
                      <button class="btn btn-success">Checkout</button>
@@ -100,12 +99,15 @@
         </div>
         <br><br>
     </div>
-@endsection
+    </x-app-layout>
+
 
 <script>
 
    document.addEventListener('DOMContentLoaded', event => {
+
     setupAudioPlayers();
+
     });
 
     function setupAudioPlayers() {
@@ -125,5 +127,6 @@
                 });
             });
         }
+        
 </script>
 

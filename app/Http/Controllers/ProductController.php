@@ -38,7 +38,7 @@ class ProductController extends Controller
             ],
         ]);
 
-        $products = Product::all();
+       // $products = Product::all();
         $lineItems = [];
         $totalPrice = 0;
         foreach ($cartCollection as $product) {
@@ -74,7 +74,8 @@ class ProductController extends Controller
         
 
         $order = new Order();
-        $order->status = 'unpaid';
+        $order->id_status = 1 ;
+        $order->id_user = auth()->id();;
         $order->total_price = $totalPrice;
         $order->session_id = $session->id;
         $order->save();
@@ -98,11 +99,11 @@ class ProductController extends Controller
           
           $customer = \Stripe\Customer::retrieve($session->customer);
 
-          $order = Order::where('session_id', $session->id)->where('status', 'unpaid')->first();
+          $order = Order::where('session_id', $session->id)->where('id_status', 1)->first();
             if(!$order){
                 throw new NotFoundHttpException();
             }
-            $order->status = 'paid';
+            $order->id_status = 3;
             $order->customer_email = $customer->email;
             $order->save();
 

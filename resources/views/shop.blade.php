@@ -1,6 +1,6 @@
-@extends('layouts.app')
+<x-app-layout>
 
-@section('content')
+
     <div class="container" style="margin-top: 80px">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -27,7 +27,7 @@
                                 >
                                 <div class="card-body">
                                     <a href=""><h6 class="card-title">{{ $pro->name }}</h6></a>
-                                    <p>${{ $pro->price }}</p>
+                                    <p>${{ $pro->price }} {{$pro->coin->description }} </p>
                                     <form action="{{ route('cart.store') }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" value="{{ $pro->id }}" id="id" name="id">
@@ -63,8 +63,7 @@
         </div>
     </div>
   
-@endsection
-
+</x-app-layout>
 <script>
 
 let currentAudio; // Variable para mantener la referencia al audio actual

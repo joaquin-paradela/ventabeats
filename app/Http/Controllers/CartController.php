@@ -18,18 +18,6 @@ class CartController extends Controller
     public function cart()  {
         $cartCollection = \Cart::getContent();
 
-      /*  foreach ($cartCollection as $producto){
-            $attributes = $producto['attributes']; // Acceder a la propiedad "attributes" del elemento actual
-            // Hacer algo con la variable $attributes, como imprimir sus valores
-            echo "NAME:" . $producto['name'];
-            echo "Imagen: " . $attributes['image'] . "<br>";
-            echo "Audio: " . $attributes['audio'] . "<br>";
-            echo "Slug: " . $attributes['slug'] . "<br>";
-            echo "Price:" . $producto['price'] . "<br>";
-        }*/
-
-      //  dd($cartCollection);
-      //return response()->json($cartCollection["attributes"]);
       return view('cart')->withTitle('POLITO ECOMMERCE | CART')->with(['cartCollection' => $cartCollection]);;
     }
 
@@ -52,8 +40,7 @@ class CartController extends Controller
             'quantity' => $request->quantity,
             'attributes' => array(
                 'image' => $request->img,
-                'audio' => $request->audio,
-                'slug' => $request->slug
+                'audio' => $request->audio
             )
         ));
         return redirect()->route('cart.index')->with('success_msg', 'Item Agregado a sú Carrito!');
