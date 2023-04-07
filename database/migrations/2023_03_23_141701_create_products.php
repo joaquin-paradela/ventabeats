@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignId('id_coin')->references('id')->on('coins');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
