@@ -21,6 +21,13 @@ class Product extends Model
         return $this->belongsTo(Coin::class, 'id_coin');
     }
 
+    /*$product = Product::find(1);
+
+    // Obtener todos los items de orden para este producto
+    $orderItems = $product->orderItems;
+ */
+
+ //arreglar... un producto solo puede estar en una orderItem
     public function orderItems()
     {
         return $this->hasMany(OrderItems::class);

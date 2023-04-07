@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\OrderItems;
 use http\Env\Response;
 //use Stripe\Stripe;
 use App\Http\Controllers\Exception;
@@ -73,9 +74,10 @@ class ProductController extends Controller
 
         
 
+        //En que momento caduca la orden si no se confirma por X tiempo? agregarlo.
         $order = new Order();
-        $order->id_status = 1 ;
-        $order->id_user = auth()->id();;
+        $order->id_status = 1;
+        $order->id_user = auth()->id();
         $order->total_price = $totalPrice;
         $order->session_id = $session->id;
         $order->save();
@@ -103,9 +105,16 @@ class ProductController extends Controller
             if(!$order){
                 throw new NotFoundHttpException();
             }
+
             $order->id_status = 3;
-            $order->customer_email = $customer->email;
             $order->save();
+
+            //REALIZAR
+            //compra realizada con exito, insertar la cantidad y el precio de cada producto en mi tabla order_items
+            /*
+            $orderItems = new OrderItems();
+            $orderItems->id_order = $order->id;
+             */
 
             \Cart::clear();
             
