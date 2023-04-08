@@ -44,7 +44,7 @@ class ProductController extends Controller
         $totalPrice = 0;
         foreach ($cartCollection as $product) {
             $attributes = $product['attributes']; // Acceder a la propiedad "attributes" del elemento actual
-            // Hacer algo con la variable $attributes, como imprimir sus valores
+       
             $totalPrice += $product['price'];
             $lineItems[] = [
                 'price_data' => [
@@ -90,7 +90,6 @@ class ProductController extends Controller
 
         \Stripe\Stripe::setApiKey('sk_test_51Mo6CnKOfUz2wpM5krBE8ZMeH7wY91d1B2f5sPVllkU03BhDs3nlwqmVmzvKYvnE0zTjQQ48iZ2X8oRHRCakpoSe00Pifl7aUS');
         $sessionId = $request->get('session_id');
-
 
         try{
             $session = \Stripe\Checkout\Session::retrieve($sessionId);

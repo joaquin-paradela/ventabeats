@@ -25,6 +25,7 @@ class Product extends Model
         return $this->belongsTo(Coin::class, 'id_coin');
     }
 
+     //arreglar... un producto solo puede estar en una orderItem
     public function orderItems()
     {
         return $this->hasMany(OrderItems::class);
@@ -56,6 +57,6 @@ class Product extends Model
     $orderItems = $product->orderItems;
  */
 
- //arreglar... un producto solo puede estar en una orderItem
+
    
 }
