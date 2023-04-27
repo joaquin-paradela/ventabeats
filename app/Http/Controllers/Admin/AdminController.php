@@ -11,4 +11,9 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
+
+    public function beats()
+    {
+        return view('admin.beats');
+    }
 }

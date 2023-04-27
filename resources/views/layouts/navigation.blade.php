@@ -18,6 +18,14 @@
                     <x-nav-link :href="route('shop')" :active="request()->routeIs('shop')">
                         {{ __('Shop') }}
                     </x-nav-link>
+                    @role('admin')
+                    <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+                        {{ __('Admin') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.beats')" :active="request()->routeIs('admin.beats')">
+                        {{ __('Beats') }}
+                    </x-nav-link>
+                    @endrole
                 </div>
             </div>
 
