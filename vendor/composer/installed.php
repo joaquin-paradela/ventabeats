@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '1aee8b4edf93c10d07d5fe03084d807e7ed1799c',
+        'reference' => 'fe83de947eb6e10d30dd55f88f617a3e593d6a80',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -424,7 +424,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '1aee8b4edf93c10d07d5fe03084d807e7ed1799c',
+            'reference' => 'fe83de947eb6e10d30dd55f88f617a3e593d6a80',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -1050,12 +1050,12 @@
             'dev_requirement' => true,
         ),
         'spatie/laravel-permission' => array(
-            'pretty_version' => '5.10.0',
-            'version' => '5.10.0.0',
+            'pretty_version' => '5.10.1',
+            'version' => '5.10.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../spatie/laravel-permission',
             'aliases' => array(),
-            'reference' => '5d0a703ece4636e6bde98eb85ac72b40aa6e42bc',
+            'reference' => 'd08b3ffc5870cce4a47a39f22174947b33c191ae',
             'dev_requirement' => false,
         ),
         'stripe/stripe-php' => array(

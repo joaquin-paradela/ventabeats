@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/checkout', [ProductController::class, 'checkout'])->name('checkout');
     Route::post('/webhook', [ProductController::class, 'webhook'])->name('checkout.webhook');
     Route::post('/checkout/process', [CartController::class, 'processCheckout'])->name('checkout.process');
+
+});
+
+Route::middleware('auth', 'role:admin')->group(function() {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 });
 
