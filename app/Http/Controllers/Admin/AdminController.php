@@ -16,4 +16,15 @@ class AdminController extends Controller
     {
         return view('admin.beats');
     }
+
+    public function download($fillename)
+    {
+        $file_path = storage_path('app/public'. $fillename);
+
+         if(file_exists($file_path)){
+            return response()->download($file_path);
+         }else{
+            abort(404);
+         }
+    }
 }
