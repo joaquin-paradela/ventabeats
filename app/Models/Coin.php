@@ -17,7 +17,7 @@ class Coin extends Model
 
     public function products()
     {
-        return $this->hasMany(Product::class, 'id_coin');
+        return $this->hasMany(Product::class, 'id_product');
     }
 
 

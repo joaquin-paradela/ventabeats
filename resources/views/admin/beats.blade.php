@@ -21,7 +21,8 @@
 			<h2>Productos &raquo; Agregar</h2>
 			<hr />
 
-			<form class="form-horizontal" action="" method="post">
+			<form class="form-horizontal" action="" method="POST">
+            @csrf
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Nombre</label>
 					<div class="col-sm-2">
@@ -60,7 +61,7 @@
 				<div class="form-group">
 					<label class="col-sm-3 control-label">&nbsp;</label>
 					<div class="col-sm-6">
-						<input type="submit" name="add" class="btn btn-sm btn-primary" value="Guardar datos">
+						<input type="submit" name="add" id="add" class="btn btn-sm btn-primary" value="Guardar datos">
 						<a href="index.php" class="btn btn-sm btn-danger">Cancelar</a>
 					</div>
 				</div>
@@ -69,7 +70,6 @@
 	</div>
  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
+
 
 </x-admin-layout>

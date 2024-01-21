@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,12 @@ class AdminController extends Controller
     public function beats()
     {
         return view('admin.beats');
+    }
+
+    public function show()
+    {
+        $products = Product::all();
+        return view('admin.show', compact('products'));
     }
 
     public function download($fillename)

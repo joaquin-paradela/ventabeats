@@ -17,9 +17,12 @@ use App\Http\Controllers\Admin\AdminController;
 |
 */
 
-Route::get('/', function () {
+
+Route::get('/', [CartController::class, 'shop'])->name('shop');
+
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -49,11 +52,11 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth', 'role:admin')->group(function() {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-    Route::get('/beats', [AdminController::class, 'beats'])->name('admin.beats');
+    Route::post('/beats', [AdminController::class, 'beats'])->name('admin.beats');
+    Route::get('/show', [AdminController::class, 'show'])->name('admin.show');
 
 });
 
-Route::get('/shop', [CartController::class, 'shop'])->name('shop');
 
 
 
