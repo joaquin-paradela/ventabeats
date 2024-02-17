@@ -23,7 +23,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
+
+Route::get('/original', function () {
+    return view('original');
+})->name('original');
 
 Route::middleware('auth')->group(function () {
 
